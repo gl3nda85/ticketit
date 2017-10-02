@@ -49,6 +49,7 @@ class TicketitTableSeeder extends Seeder
     {
         Model::unguard();
 
+
         $faker = \Faker\Factory::create();
 
         // create agents
