@@ -121,7 +121,9 @@ class InstallController extends Controller
                 '--provider' => 'Kordy\\Ticketit\\TicketitServiceProvider',
                 '--tag'      => ['db'],
             ]);
-            Artisan::call('migrate');
+            Artisan::call('migrate', [
+                '--force' => true,
+            ]);
 
             $this->settingsSeeder($master);
 
