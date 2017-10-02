@@ -197,6 +197,7 @@ class TicketitServiceProvider extends ServiceProvider
             $admin_route = Setting::grab('admin_route');
             $admin_route_path = Setting::grab('admin_route_path');
             include base_path().'/'. Setting::grab('routes');
+
         } elseif (Request::path() == 'tickets-install'
                 || Request::path() == 'tickets-upgrade'
                 || Request::path() == 'tickets'
