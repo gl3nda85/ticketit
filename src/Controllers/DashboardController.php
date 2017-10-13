@@ -2,7 +2,7 @@
 
 namespace Kordy\Ticketit\Controllers;
 
-use App\Http\Components\Controllers\Controller;
+use App\Http\Controllers\Components\Controller;
 use Kordy\Ticketit\Models\Agent;
 use Kordy\Ticketit\Models\Category;
 use Kordy\Ticketit\Models\Ticket;
