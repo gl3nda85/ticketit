@@ -15,6 +15,7 @@ use Kordy\Ticketit\Seeds\TicketitTableSeeder;
 
 class InstallController extends Controller
 {
+
     public $migrations_tables = [];
 
     public function __construct()
