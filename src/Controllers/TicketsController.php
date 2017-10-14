@@ -2,7 +2,7 @@
 
 namespace Kordy\Ticketit\Controllers;
 
-use App\Http\Controllers\Components\Controller;
+use App\Http\Controllers\Controller;
 use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
