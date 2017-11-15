@@ -1,4 +1,3 @@
-
 @extends($email)
 
 @section('subject')

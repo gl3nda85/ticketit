@@ -1,7 +1,3 @@
-<?php $notification_owner = unserialize($notification_owner);?>
-<?php $ticket = unserialize($ticket);?>
-<?php $original_ticket = unserialize($original_ticket);?>
-
 @extends($email)
 
 @section('subject')

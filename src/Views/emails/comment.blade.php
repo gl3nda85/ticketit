@@ -1,6 +1,3 @@
-<?php $comment = unserialize($comment);?>
-<?php $ticket = unserialize($ticket);?>
-
 @extends($email)
 
 @section('subject')

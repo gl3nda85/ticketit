@@ -16,7 +16,7 @@ class NotificationsController extends Controller
         $ticket = $comment->ticket;
         $notification_owner = $comment->user;
         $template = 'ticketit::emails.comment';
-        $data = ['comment' => serialize($comment), 'ticket' => serialize($ticket)];
+        $data = ['comment' => $comment, 'ticket' => $ticket];
 
         $this->sendNotification($template, $data, $ticket, $notification_owner,
             trans('ticketit::lang.notify-new-comment-from').$notification_owner->name.trans('ticketit::lang.notify-on').$ticket->subject, 'comment');
@@ -27,9 +27,9 @@ class NotificationsController extends Controller
         $notification_owner = \Auth::user();
         $template = 'ticketit::emails.status';
         $data = [
-            'ticket'             => serialize($ticket),
-            'notification_owner' => serialize($notification_owner),
-            'original_ticket'    => serialize($original_ticket),
+            'ticket'             => $ticket,
+            'notification_owner' => $notification_owner,
+            'original_ticket'    => $original_ticket,
         ];
 
         if (strtotime($ticket->completed_at)) {
@@ -46,9 +46,9 @@ class NotificationsController extends Controller
         $notification_owner = \Auth::user();
         $template = 'ticketit::emails.transfer';
         $data = [
-            'ticket'             => serialize($ticket),
-            'notification_owner' => serialize($notification_owner),
-            'original_ticket'    => serialize($original_ticket),
+            'ticket'             => $ticket,
+            'notification_owner' => $notification_owner,
+            'original_ticket'    => $original_ticket,
         ];
 
         $this->sendNotification($template, $data, $ticket, $notification_owner,
