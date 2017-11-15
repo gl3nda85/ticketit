@@ -60,8 +60,8 @@ class NotificationsController extends Controller
         $notification_owner = \Auth::user();
         $template = 'ticketit::emails.assigned';
         $data = [
-            'ticket'             => serialize($ticket),
-            'notification_owner' => serialize($notification_owner),
+            'ticket'             => $ticket,
+            'notification_owner' => $notification_owner,
         ];
 
         $this->sendNotification($template, $data, $ticket, $notification_owner,
