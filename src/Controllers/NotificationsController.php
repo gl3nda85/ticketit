@@ -24,7 +24,7 @@ class NotificationsController extends Controller
 
     public function ticketStatusUpdated(Ticket $ticket, Ticket $original_ticket)
     {
-        $notification_owner = auth()->user();
+        $notification_owner = \Auth::user();
         $template = 'ticketit::emails.status';
         $data = [
             'ticket'             => serialize($ticket),
@@ -43,7 +43,7 @@ class NotificationsController extends Controller
 
     public function ticketAgentUpdated(Ticket $ticket, Ticket $original_ticket)
     {
-        $notification_owner = auth()->user();
+        $notification_owner = \Auth::user();
         $template = 'ticketit::emails.transfer';
         $data = [
             'ticket'             => serialize($ticket),
@@ -57,7 +57,7 @@ class NotificationsController extends Controller
 
     public function newTicketNotifyAgent(Ticket $ticket)
     {
-        $notification_owner = auth()->user();
+        $notification_owner = \Auth::user();
         $template = 'ticketit::emails.assigned';
         $data = [
             'ticket'             => serialize($ticket),
